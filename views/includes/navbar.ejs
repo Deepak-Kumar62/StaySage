@@ -1,0 +1,46 @@
+<header>
+  <nav class="navbar navbar-expand-md bg-body-tertiary border-bottom">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/listings"
+        ><i class="fa-solid fa-earth-americas logo-icon"></i
+      ></a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div
+        class="collapse navbar-collapse d-flex justify-content-between align-items-center"
+        id="navbarNav"
+      >
+        <a class="navbar-link" href="/listings">Explore</a>
+        <!-- Search bar -->
+        <form class="d-flex" role="search">
+          <input
+            class="form-control me-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <button class="btn" type="submit">Search</button>
+        </form>
+        <div class="navbar-nav d-flex align-items-center">
+          <a class="navbar-link me-4" href="/listings/new">Airbnb your home</a>
+          <% if(!currentUser){%>
+          <a href="/signup" class="navbar-link auth-btn btn">SignUp</a>
+          <a href="/login" class="navbar-link auth-btn btn">LogIn</a>
+          <%}%> <% if(currentUser){%>
+          <a href="/logout" class="navbar-link auth-btn btn">LogOut</a>
+          <%}%>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>

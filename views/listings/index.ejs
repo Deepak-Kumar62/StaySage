@@ -1,0 +1,75 @@
+<% layout("/layouts/boilerPlate") -%>
+<!-- <h2>All Listing</h2> -->
+<div class="cat-container d-flex align-items-center justify-content-between">
+  <div class="filters d-flex justify-content-center gap-5">
+    <div class="filter text-center">
+      <div><i class="fa-solid fa-cow fs-4"></i></div>
+      <p>Farms</p>
+    </div>
+    <div class="filter text-center">
+      <div><i class="fa-solid fa-bed fs-4"></i></div>
+      <p>Rooms</p>
+    </div>
+    <div class="filter text-center">
+      <div><i class="fa-solid fa-person-swimming fs-4"></i></div>
+      <p>Amazing pools</p>
+    </div>
+    <div class="filter text-center">
+      <div><i class="fa-solid fa-city fs-4"></i></div>
+      <p>Top cities</p>
+    </div>
+    <div class="filter text-center">
+      <div><i class="fa-solid fa-fire fd-4"></i></div>
+      <p>Trending</p>
+    </div>
+    <div class="filter text-center">
+      <div><i class="fa-solid fa-snowflake fs-4"></i></div>
+      <p>Arctic</p>
+    </div>
+    <div class="filter text-center">
+      <div><i class="fa-solid fa-mountain fs-4"></i></div>
+      <p>Mountains</p>
+    </div>
+    <div class="filter text-center">
+      <div><i class="fa-solid fa-tower-observation fs-4"></i></div>
+      <p>Towers</p>
+    </div>
+    <div class="filter text-center">
+      <div><i class="fa-solid fa-water fs-4"></i></div>
+      <p>Lakes</p>
+    </div>
+    <div class="filter text-center">
+      <div><i class="fa-solid fa-house fs-4"></i></div>
+      <p>Tiny homes</p>
+    </div>
+  </div>
+  <div class="form-check form-switch form-check-reverse">
+    <input
+      class="form-check-input"
+      type="checkbox"
+      id="flexSwitchCheckReverse"
+    />
+    <label class="form-check-label" for="flexSwitchCheckReverse"
+      >Display total before taxes</label
+    >
+  </div>
+</div>
+
+<div class="card_container row row-gap-4 justify-content-center">
+  <%for(let listing of allListing){%>
+    <div class="card_wrapper col">
+      <a href="/listings/<%= listing._id %>">
+        <div class="card listing_card">
+          <img src=<%= listing.image.path %> class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title"><%= listing.title %></h5>
+            <p class="card-title"><b>&#8377; <%= listing.price.toLocaleString("en-IN") %></b></p>
+            <p class="card-title"><%= listing.location %></p>
+            <p class="card-title"><%= listing.country %></p>
+          </div>
+        </div>
+      </a>
+    </div>
+  <%}%>
+</div>
+<script src="/javaScript/fetchListing.js"></script>
